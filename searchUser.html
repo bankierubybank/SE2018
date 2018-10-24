@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blood Donation Log</title>
+		<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+		<script type="text/javascript" src="searchUserData.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyDlo88v-Wf_R2NhByPA5vEYl2bX_bT_ndk",
+		    authDomain: "blood-donation-log.firebaseapp.com",
+		    databaseURL: "https://blood-donation-log.firebaseio.com",
+		    projectId: "blood-donation-log",
+		    storageBucket: "blood-donation-log.appspot.com",
+		    messagingSenderId: "623984422252"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	Search User:
+	<p id="user_name"></p>
+	<p id="user_nationalID"></p>
+	<p id="user_address"></p>
+	<p id="user_telephoneNumber"></p>
+	<p id="user_gender"></p>
+	<p id="user_bloodGroup"></p>
+	<p id="blood_donation_data"></p>
+	<form action="#" onsubmit="searchUserData()">
+		Blood Donation ID (10 หลัก): <input type="text" id="bloodDonationID" required pattern="[0-9]{10}"><br>
+		<button>Search</button>
+	</form>
+</body>
+</html>
