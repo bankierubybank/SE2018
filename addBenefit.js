@@ -18,7 +18,7 @@ function addBenefit() {
 					benefit: benefitsValue,
 					location: locationValue
 				});
-				alert("Benefit Added!");
+				alert("เพิ่มสิทธิประโยชน์สำเร็จ!");
 				clear();
 			});
 		} catch (err) {

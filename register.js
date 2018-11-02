@@ -1,3 +1,25 @@
+function register(){
+	var email = document.getElementById("email").value;
+	var password = document.getElementById("password").value;
+	var retype_password = document.getElementById("retype_password").value;
+	if (password == retype_password) {
+		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+			var errorCode = error.code;
+			var errorMessage = error.message;
+			if (errorCode == 'auth/weak-password') {
+			    alert('The password is too weak.');
+			} else {
+			    alert(errorMessage);
+		    }
+		});
+		alert("ลงทะเบียนสำเร็จ!");
+		addUserData();
+	} else {
+		var alertMsg = "รหัสผ่านไม่ตรงกัน!";
+		alert(alertMsg);
+	}
+}
+
 function addUserData() {
 	var databaseRef = firebase.database().ref("users/");
 
@@ -25,34 +47,13 @@ function addUserData() {
 				gender: genderValue,
 				bloodGroup: bloodGroupValue
 			});
-			alert("User: " + id + "\n" + firstNameValue + " " + lastNameValue + " has been added!");
+			alert("User: " + id + "\n" + firstNameValue + " " + lastNameValue + " ลงทะเบียนสำเร็จ!");
 			clear();
+			window.location.replace("https://blood-donation-log.firebaseapp.com/?");
 		} catch (err) {
 			console.log(err);
 		}
 	})
-}
-
-function register(){
-	var email = document.getElementById("email").value;
-	var password = document.getElementById("password").value;
-	var retype_password = document.getElementById("retype_password").value;
-	if (password == retype_password) {
-		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-			var errorCode = error.code;
-			var errorMessage = error.message;
-			if (errorCode == 'auth/weak-password') {
-			    alert('The password is too weak.');
-			} else {
-			    alert(errorMessage);
-		    }
-		});
-		alert("ลงทะเบียนสำเร็จ!");
-		addUserData();
-	} else {
-		var alertMsg = "รหัสผ่านไม่ตรงกัน!";
-		alert(alertMsg);
-	}
 }
 
 function clear(){
