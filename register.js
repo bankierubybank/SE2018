@@ -1,24 +1,3 @@
-function register(){
-	var email = document.getElementById("email").value;
-	var password = document.getElementById("password").value;
-	var retype_password = document.getElementById("retype_password").value;
-	if (password == retype_password) {
-		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-			var errorCode = error.code;
-			var errorMessage = error.message;
-			if (errorCode == 'auth/weak-password') {
-			    alert('The password is too weak.');
-			} else {
-			    alert(errorMessage);
-		    }
-		});
-		addUserData();
-	} else {
-		var alertMsg = "รหัสผ่านไม่ตรงกัน!";
-		alert(alertMsg);
-	}
-}
-
 function addUserData() {
 	var databaseRef = firebase.database().ref("users/");
 

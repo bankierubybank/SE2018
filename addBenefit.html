@@ -7,6 +7,7 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
 	<script type="text/javascript" src="firebase-init.js"></script>
 	<script type="text/javascript" src="addBenefit.js"></script>
+  <script type="text/javascript" src="register.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -14,39 +15,102 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="https://blood-donation-log.firebaseapp.com/">Blood Donation Log</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mx-auto">
-	      <li class="nav-item active mr-5 mf-5">
-	        <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/register?">ลงทะเบียน<span class="sr-only"></span></a>
-	      </li>
-	      <li class="nav-item active mr-5 mf-5">
-	        <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/editUser?">แก้ไขข้อมูลผู้บริจาค<span class="sr-only"></span></a>
-	      </li>
-	      <li class="nav-item active mr-5 mf-5">
-	        <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/searchUser?">หาข้อมูลผู้บริจาค<span class="sr-only"></span></a>
-	      </li>
-	      <li class="nav-item active mr-5 mf-5">
-            <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/searchBloodDonation?">ดูประวัติการบริจาคโลหิต<span class="sr-only"></span></a>
+      <a class="navbar-brand" href="https://blood-donation-log.firebaseapp.com/">Blood Donation Log</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active mr-5 mf-5">
+            <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/editUser?">แก้ไขข้อมูลผู้บริจาค<span class="sr-only"></span></a>
           </li>
           <li class="nav-item active mr-5 mf-5">
-            <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/viewNextDonation?">ดูวันที่สามารถบริจาคโลหิตในครั้งถัดไป<span class="sr-only"></span></a>
+            <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/searchUser?">หาข้อมูลผู้บริจาค<span class="sr-only"></span></a>
           </li>
-	      <li class="nav-item active mr-5 mf-5">
-	        <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/addBloodDonation?">บันทึกการบริจาคโลหิต<span class="sr-only"></span></a>
-	      </li>
-	      <li class="nav-item active mr-5 mf-5">
-	        <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/viewBenefits?">ดูสิทธิประโยชน์<span class="sr-only"></span></a>
-	      </li>
-	      <li class="nav-item active mr-5 mf-5">
-	        <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/viewQualifications?">ดูคุณสมบัติผู้บริจาคโลหิต<span class="sr-only"></span></a>
-	      </li>
-	    </ul>
-	  </div>
-	</nav>
+          <li class="nav-item active mr-5 mf-5">
+            <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/searchBloodDonation?">หาข้อมูลการบริจาคโลหิต<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active mr-5 mf-5">
+            <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/addBloodDonation?">บันทึกการบริจาคโลหิต<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active mr-5 mf-5">
+            <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/viewBenefits?">ดูสิทธิประโยชน์<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active mr-5 mf-5">
+            <a class="nav-link" href="https://blood-donation-log.firebaseapp.com/viewQualifications?">ดูคุณสมบัติผู้บริจาคโลหิต<span class="sr-only"></span></a>
+          </li>
+          <form class="form-inline my-2 my-lg-0">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+              ลงทะเบียน
+            </button>
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">ลงทะเบียน</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <!-- action="#" onsubmit="addUserData()" -->
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>ชื่อ (ภาษาอังกฤษ)</label>
+                          <input type="text" id="firstName" required pattern="[A-Za-z]{1,64}" class="form-control" placeholder="First Name" aria-label="First Name" aria-describedby="basic-addon2">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>นามสกุล (ภาษาอังกฤษ)</label>
+                          <input type="text" id="lastName" required pattern="[A-Za-z]{1,64}" class="form-control" placeholder="Last Name" aria-label="Last Name" aria-describedby="basic-addon2">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <label>เลขประจำตัวประชาชน (ไม่ต้องใส่ขีด)</label>
+                          <input type="text" id="nationalID" required pattern="[0-9]{13}" class="form-control" placeholder="National ID" aria-label="National ID" aria-describedby="basic-addon2" style="width: 440px;">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-2">
+                          <label>เพศ</label>
+                          <select class="form-control" id="gender" required>
+                            <option value="Female">หญิง</option>
+                            <option value="Male">ชาย</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-3" style="padding-left: 50px;">
+                          <label>กลุ่มเลือด</label>
+                          <select class="form-control" id="bloodGroup" required>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="AB">AB</option>
+                            <option value="O">O</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6" style="padding-left: 45px;">
+                          <label>หมายเลขโทรศัพท์มือถือ (ไม่ต้องใส่ขีด)</label>
+                          <input type="text" id="telephoneNumber" required pattern="[0-9]{10}" class="form-control" placeholder="Tel" aria-label="Tel" aria-describedby="basic-addon2">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <label>ที่อยู่</label>
+                          <textarea class="form-control" id="address" required rows="3" style="width: 440px;"></textarea>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="addUserData()">ลงทะเบียน</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </ul>
+      </div>
+    </nav>
 
 	<div class="container">
 		<form action="#" onsubmit="addBenefit()">
