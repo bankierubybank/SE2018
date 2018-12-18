@@ -55,9 +55,6 @@ function addUserData() {
 }
 
 function clear(){
-	document.getElementById("email").value = "";
-	document.getElementById("password").value = "";
-	document.getElementById("retype_password").value = "";
 	document.getElementById("firstName").value = "";
 	document.getElementById("lastName").value = "";
 	document.getElementById("nationalID").value = "";
