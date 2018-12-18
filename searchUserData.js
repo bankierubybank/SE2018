@@ -22,7 +22,6 @@ function searchUserData() {
 					document.getElementById("user_gender").innerHTML = gender;
 					document.getElementById("user_bloodGroup").innerHTML = bloodGroup;
 				});
-				alert("User: " + bloodDonationIDValue + " Found!");
 				clear();
 			} else {
 				var alertMsg = "User: " + bloodDonationIDValue + " ไม่มีในระบบ!\nกรุณาลงทะเบียน";

@@ -19,9 +19,7 @@ function queryUserData() {
 					document.getElementById("bloodDonationID").value = bloodDonationIDValue;
 					document.getElementById("bloodDonationID").setAttribute("disabled", "disabled");
 					document.getElementById("queryUserBtn").hidden = true;
-				});
-				alert("User: " + bloodDonationIDValue + " Found!");
-				
+				});				
 			} else {
 				var alertMsg = "User: " + bloodDonationIDValue + " not found!\nPlease add user";
 				alert(alertMsg);

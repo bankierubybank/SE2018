@@ -20,7 +20,6 @@ function searchBloodDonationData() {
 					table = table + '</tbody></table>';
 					document.getElementById("table_display").innerHTML = table;
 				});
-				alert("User: " + bloodDonationIDValue + " Found!");
 				clear();
 			} else {
 				var alertMsg = "User: " + bloodDonationIDValue + " ไม่มีในระบบ!\nกรุณาลงทะเบียน";
