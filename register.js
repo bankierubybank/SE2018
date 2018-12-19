@@ -46,6 +46,7 @@ function addUserData() {
 				gender: genderValue,
 				bloodGroup: bloodGroupValue
 			});
+			alert("User: " + id + "\n" + firstNameValue + " " + lastNameValue + " ลงทะเบียนสำเร็จ!");
 			clear();
 			window.location.replace("https://blood-donation-log.firebaseapp.com/?");
 		} catch (err) {

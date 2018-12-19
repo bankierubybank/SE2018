@@ -22,7 +22,7 @@ function viewNextDonation() {
 						year += 1;
 					}
 					document.getElementById("data_display").hidden = false;
-					document.getElementById("nextDonation").innerHTML = "วันที่ " + day + " เดือน " + month + " ปี " + year;
+					document.getElementById("nextDonation").innerHTML = "วันที่ " + day + " เดือน " + month.toString().padStart(2, '0') + " ปี " + year;
 				});
 				clear();
 			} else {
