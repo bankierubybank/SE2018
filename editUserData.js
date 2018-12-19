@@ -11,10 +11,10 @@ function queryUserData() {
 					var lastName = userSnapshot.val().lastName;
 					var address = userSnapshot.val().address;
 					var telephoneNumber = userSnapshot.val().telephoneNumber;
-					document.getElementById("newfirstName").value = firstName;
-					document.getElementById("newlastName").value = lastName;
-					document.getElementById("newaddress").value = address;
-					document.getElementById("newtelephoneNumber").value = telephoneNumber;
+					document.getElementById("firstName").value = firstName;
+					document.getElementById("lastName").value = lastName;
+					document.getElementById("address").value = address;
+					document.getElementById("telephoneNumber").value = telephoneNumber;
 					document.getElementById("editForm").hidden = false;
 					document.getElementById("bloodDonationID").value = bloodDonationIDValue;
 					document.getElementById("bloodDonationID").setAttribute("disabled", "disabled");
@@ -38,10 +38,10 @@ function editUserData() {
 			var bloodDonationIDValue = document.getElementById("bloodDonationID").value;
 			if (snapshot.hasChild(bloodDonationIDValue)) {
 				var userRef = firebase.database().ref("users/" + bloodDonationIDValue);
-				var firstNameValue = document.getElementById("newfirstName").value;			
-				var lastNameValue = document.getElementById("newlastName").value;
-				var addressValue = document.getElementById("newaddress").value;
-				var telephoneNumberValue = document.getElementById("newtelephoneNumber").value;
+				var firstNameValue = document.getElementById("firstName").value;			
+				var lastNameValue = document.getElementById("lastName").value;
+				var addressValue = document.getElementById("address").value;
+				var telephoneNumberValue = document.getElementById("telephoneNumber").value;
 				userRef.update({
 					firstName: firstNameValue,
 					lastName: lastNameValue,
